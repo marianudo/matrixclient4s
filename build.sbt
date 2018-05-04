@@ -9,4 +9,16 @@ lazy val root = (project in file(".")).
     )),
     name := "matrix4s",
     libraryDependencies += scalaTest % Test
+  ).aggregate(
+    algebra
+  )
+
+lazy val algebra = (project in file("algebra"))
+  .settings(
+    name := "algebra",
+    libraryDependencies ++= Seq(
+      scalaTest % Test,
+      catsCore,
+      catsFree
+    )
   )
