@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
       scalaVersion := "2.12.5",
       version      := "0.0.1-SNAPSHOT"
     )),
-    name := "matrix4s",
+    name := "matrixclient4s",
     libraryDependencies += scalaTest % Test
   ).aggregate(
     algebra
