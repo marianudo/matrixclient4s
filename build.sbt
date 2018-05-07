@@ -5,7 +5,26 @@ lazy val root = (project in file(".")).
     inThisBuild(List(
       organization := "me.marianonavas",
       scalaVersion := "2.12.5",
-      version      := "0.0.1-SNAPSHOT"
+      version      := "0.0.1-SNAPSHOT",
+      scalacOptions := Seq(
+        "-unchecked",
+        "-deprecation",
+        "-feature",
+        "-encoding", "UTF-8",
+        "-target:jvm-1.8",
+        "-Xfuture",
+        "-Xfatal-warnings",
+        "-Xlint",
+        "-Yno-adapted-args",
+        "-Ypartial-unification",
+        "-Ywarn-nullary-override",
+        "-Ywarn-dead-code",
+        "-Ywarn-numeric-widen",
+        "-Ywarn-value-discard",
+        "-Ywarn-unused",
+        "-Ywarn-inaccessible",
+        "-language:higherKinds"
+      )
     )),
     name := "matrixclient4s",
     libraryDependencies += scalaTest % Test
