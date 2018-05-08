@@ -29,12 +29,23 @@ lazy val root = (project in file(".")).
     name := "matrixclient4s",
     libraryDependencies += scalaTest % Test
   ).aggregate(
-    algebra
+    algebra,
+    http
   )
 
 lazy val algebra = (project in file("algebra"))
   .settings(
     name := "algebra",
+    libraryDependencies ++= Seq(
+      scalaTest % Test,
+      catsCore,
+      catsFree
+    )
+  )
+
+lazy val http = (project in file("http"))
+  .settings(
+    name := "http",
     libraryDependencies ++= Seq(
       scalaTest % Test,
       catsCore,
