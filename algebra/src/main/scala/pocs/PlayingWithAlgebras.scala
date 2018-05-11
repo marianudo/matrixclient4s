@@ -1,4 +1,4 @@
-package play
+package pocs
 
 import cats.InjectK
 import cats.data.EitherK
